@@ -1,0 +1,60 @@
+<div class="h-full flex flex-col items-center justify-center">
+  <img src="../../../assets/agama_logo.jpg" alt="Agama logo" class="!mb-6  h-1/3" />
+
+  <div class="flex items-center justify-center">
+    <h1 class="agama-header | !mt-10 !mb-14 !text-3xl"> Calculadora de leche de Agama </h1>
+  </div>
+
+  <form [formGroup]="signInForm" class="login material">
+
+    <div class="w-3/4">
+      <mat-form-field class="w-full !m-4">
+        <mat-label for="username"> Email: </mat-label>
+        <input matInput class="inputField" type="text" autocomplete="email" formControlName="email" placeholder="Email" type="text"
+          required />
+
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+          <mat-error>
+            Introduce un email válido
+          </mat-error>
+        }
+
+        @if (emailFormControl.hasError('required')) {
+          <mat-error>
+            Email es <strong>necesario</strong>
+          </mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="w-3/4">
+      <mat-form-field class="w-full !m-4">
+        <mat-label for="username"> Contraseña: </mat-label>
+        <input matInput type="password" autocomplete="current-password" formControlName="password" class="inputField" placeholder="Password" required />
+
+        @if (passwordFormControl.hasError('required')) {
+          <mat-error>
+            La contraseña es <strong> necesaria </strong>
+          </mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-col">
+      <button type="submit" aria-live="polite" class="button block" (click)="handleLogin()">
+        Login
+      </button>
+      <p class="!mt-2"> O </p>
+      <button (click)="handleSignup()" aria-live="polite" class="button block">
+        Regístrate
+      </button>
+    </div>
+  </form>
+
+</div>
+
+@if (displayErrorMessage) {
+  <div class="error-message">
+    Oops, ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde.
+  </div>
+}

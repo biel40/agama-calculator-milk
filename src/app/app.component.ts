@@ -1,13 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core'
+import { SupabaseService } from './services/supabase/supabase.service'
 import { RouterOutlet } from '@angular/router';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    RouterOutlet,
+    SpinnerComponent
+  ]
 })
-export class AppComponent {
-  title = 'agama_project';
+export class AppComponent implements OnInit {
+
+  session: any;
+
+  private _supabaseService = inject(SupabaseService);
+  
+  constructor(
+  ) {
+
+  }
+
+  async ngOnInit() {
+    await this._supabaseService.getSession().then((session) => {
+      this.session = session;
+    });
+    
+    this._supabaseService.authChanges((_, session) => (this.session = session));
+  }
 }
