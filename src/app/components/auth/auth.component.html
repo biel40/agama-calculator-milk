@@ -1,11 +1,11 @@
-<div class="h-full flex flex-col items-center justify-center">
-  <img src="../../../assets/agama_logo.jpg" alt="Agama logo" class="!mb-6  h-1/3" />
+<div class="!mb-12 h-full flex flex-col items-center justify-center">
+  <img src="../../../assets/agama_logo.jpg" alt="Agama logo" class="!mb-6  h-1/4" />
 
   <div class="flex items-center justify-center">
     <h1 class="agama-header | !mt-10 !mb-14 !text-3xl"> Calculadora de leche de Agama </h1>
   </div>
 
-  <form [formGroup]="signInForm" class="login material">
+  <form [formGroup]="signInForm" class="login material mb-8">
 
     <div class="w-3/4">
       <mat-form-field class="w-full !m-4">
@@ -40,12 +40,12 @@
       </mat-form-field>
     </div>
 
-    <div class="flex flex-col">
-      <button type="submit" aria-live="polite" class="button block" (click)="handleLogin()">
+    <div class="flex flex-col mb-10">
+      <button type="submit" aria-live="polite" class="customButton" (click)="handleLogin()">
         Login
       </button>
-      <p class="!mt-2"> O </p>
-      <button (click)="handleSignup()" aria-live="polite" class="button block">
+      <p class="!mt-2 !mb-2"> O </p>
+      <button (click)="handleSignup()" aria-live="polite" class="customButton">
         Regístrate
       </button>
     </div>

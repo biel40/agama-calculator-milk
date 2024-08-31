@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { FormControl, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { User } from '@supabase/supabase-js';
-import { Profile, SupabaseService } from '../../services/supabase/supabase.service';
+import { SupabaseService } from '../../services/supabase/supabase.service';
 import { MaterialModule } from '../../modules/material.module';
 import { UserService } from '../../services/user/user.service';
 import { LoaderService } from '../../services/loader/loader.service';
@@ -67,7 +67,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
     if (this.user) {
       alert('Ya hay session iniciada. Redirigiendo a la página de perfil.');
-      this._router.navigate(['profile']);
+      this._router.navigate(['dashboard']);
     }
   }
 
@@ -85,7 +85,8 @@ export class AuthComponent implements OnInit, OnDestroy {
           this.user = user.data.user;
           this._userService.setUser(this.user);
           this._loaderService.setLoading(true);
-          this._router.navigate(['profile']);
+
+          this._router.navigate(['dashboard']);
         }
       }
     } catch (error) {
