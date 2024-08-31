@@ -1,10 +1,13 @@
 <div>
     <h1>Dashboard principal!</h1>
 
-    <p>Informción del usuario logeado:</p>
+    <p>Información del usuario logeado</p>
 
     <p>Nombre: {{ profile?.name }}</p>
-    <p>Email: {{ profile?.surname1 }}</p>
-    <p>Edad: {{ profile?.surname2 }}</p>
+    <p>Apellidos: {{ profile?.surname1 }} {{ profile?.surname2}}</p>
+    
+    <div>
+        <button class="sign-out-button" (click)="signOut()">Cerrar sesión</button>
+    </div>
 
 </div>

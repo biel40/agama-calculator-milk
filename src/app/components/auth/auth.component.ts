@@ -63,9 +63,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   private async _checkUserSession() {
-    this.user = this._userService.getUser();
+    let session = await this._supabaseService.getSession();
 
-    if (this.user) {
+    if (session) {
       alert('Ya hay session iniciada. Redirigiendo a la página de perfil.');
       this._router.navigate(['dashboard']);
     }
