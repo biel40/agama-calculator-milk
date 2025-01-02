@@ -33,14 +33,14 @@ p span {
 }
 
 .sign-out-button {
-    background-color: #e74c3c; /* Color rojo vibrante */
-    color: #fff; /* Color del texto blanco */
+    background-color: #e74c3c; 
+    color: #fff; 
     border: none; /* Sin borde */
     padding: 10px 20px; /* Espaciado interno */
     font-size: 1rem; /* Tamaño de la fuente */
     font-weight: bold; /* Negrita para el texto */
     border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor a pointer para indicar clic */
+    cursor: pointer; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el hover */
 }
 
@@ -52,4 +52,22 @@ p span {
 .sign-out-button:active {
     background-color: #a93226; /* Color aún más oscuro al hacer clic */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Reducir sombra al hacer clic */
+}
+
+.open-calculator-button {
+    background-color: #4a90e2; 
+    color: #fff; 
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita para el texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el hover */
+    margin-bottom: 1em;
+}
+
+.open-calculator-button:hover {
+    background-color: #c0392b; /* Color más oscuro al pasar el ratón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra sutil al pasar el ratón */
 }

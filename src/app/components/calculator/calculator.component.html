@@ -1,0 +1,45 @@
+<div class="main-wrapper pb-6">
+    <div class="header-container">
+        <h1 class="header-calculator">Calculadora</h1>
+    </div>
+
+    <div class="calculator-container">
+        <h1>Calcular grasa de leche y volumen total</h1>
+
+        <form class="calculator-form">
+            <div class="form-group">
+                <label for="volume1">Volumen de Leche 1 (L):</label>
+                <input type="number" name="volume1" id="volume1" [(ngModel)]="volume1" placeholder="Introduce volumen 1" />
+            </div>
+
+            <div class="form-group">
+                <label for="fat1">Grasa de Leche 1 (%):</label>
+                <input type="number" name="fat1" id="fat1" [(ngModel)]="fat1" placeholder="Introduce grasa 1" />
+            </div>
+
+            <div class="form-group">
+                <label for="volume2">Volumen de Leche 2 (L):</label>
+                <input type="number" name="volume2" id="volume2" [(ngModel)]="volume2" placeholder="Introduce volumen 2" />
+            </div>
+
+            <div class="form-group">
+                <label for="fat2">Grasa de Leche 2 (%):</label>
+                <input type="number" name="volume2" id="fat2" [(ngModel)]="fat2" placeholder="Introduce grasa 2" />
+            </div>
+
+            <button type="button" id="calculateBtn" (click)="calculate()">Calcular</button>
+        </form>
+
+        <div class="result-container">
+            <h2>Resultado</h2>
+            <p id="result">Total de Grasa: {{ totalFatCalculated }}%</p>
+            <p id="result">Volumen Total de leche: {{ totalVolumeCalculated }}L</p>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+        <button (click)="goBack()">
+            Volver
+        </button>
+    </div>
+</div>
