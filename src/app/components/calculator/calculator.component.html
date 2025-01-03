@@ -32,7 +32,7 @@
 
         <div class="result-container">
             <h2>Resultado</h2>
-            <p id="result">Total de Grasa: {{ totalFatCalculated }}%</p>
+            <p id="result">Total de Grasa: {{ totalFatCalculated | number : '1.2-2' }}%</p>
             <p id="result">Volumen Total de leche: {{ totalVolumeCalculated }}L</p>
         </div>
     </div>

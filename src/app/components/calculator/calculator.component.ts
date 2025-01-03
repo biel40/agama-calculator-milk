@@ -3,6 +3,7 @@ import { MaterialModule } from '../../modules/material.module';
 import { SupabaseService } from '../../services/supabase/supabase.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-calculator',
@@ -10,7 +11,8 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./calculator.component.scss'],
     imports: [
         MaterialModule,
-        FormsModule
+        FormsModule,
+        CommonModule
     ],
     standalone: true,
 })
@@ -64,13 +66,11 @@ export class CalculatorComponent implements OnInit {
 
     public calculate(): void {
         alert('Calculando...');
-
-        // Primero calcularemos la Grasa Final. 
-        // La grasa final se calcula .....
-
-        // Una vez que tengamos la grasa final, calculamos el total del volumen del producto
         let totalVolume = this.volume1 + this.volume2;
-        let totalFat = (this.volume1 * this.fat1 + this.volume2 * this.fat2) / totalVolume;
+        let totalFat = ((this.volume1 * this.fat1) + (this.volume2 * this.fat2)) / totalVolume;
+
+        console.log('Total Fat: ', totalFat);
+        console.log('Total Volume: ', totalVolume);
 
         // Aplicar bien los calculos
         this.totalFatCalculated = totalFat;
