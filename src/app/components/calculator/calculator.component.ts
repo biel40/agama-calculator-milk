@@ -65,7 +65,6 @@ export class CalculatorComponent implements OnInit {
     }
 
     public calculate(): void {
-        alert('Calculando...');
         let totalVolume = this.volume1 + this.volume2;
         let totalFat = ((this.volume1 * this.fat1) + (this.volume2 * this.fat2)) / totalVolume;
 
